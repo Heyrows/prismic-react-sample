@@ -1,0 +1,14 @@
+{
+  "name": "prismic_react_sample",
+  "version": "1.0.0",
+  "description": "A simple Prismic react sample",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "test": ""
+  },
+  "author": {
+    "name": "Amaury Cahuet"
+  },
+  "license": "ISC"
+}
