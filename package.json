@@ -2,13 +2,35 @@
   "name": "prismic_react_sample",
   "version": "1.0.0",
   "description": "A simple Prismic react sample",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "",
-    "test": ""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "author": {
     "name": "Amaury Cahuet"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prismic-reactjs": "^1.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router": "^5.1.2"
+  },
+  "devDependencies": {
+    "react-scripts": "^3.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
