@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { HomePage } from "./modules";
 
-/**
- * Main app component
- */
+/*
+** Main app component
+*/
 export const App = () => (
   <Router>
     <Switch>

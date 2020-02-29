@@ -6,11 +6,14 @@ import { prismicClient } from "./prismicClient";
 * This way, the react components are easier to understand
 */
 
+const errorObject = error => ({ status: "error", message: error });
+
 async function getHomePage() {
   return prismicClient.getSingle("homepage")
     .then(document => {
       const data = document.data;
       return {
+        status: "ok",
         title: RichText.asText(data.title),
         description: RichText.asText(data.description),
         features: data.body.map(slice => {
@@ -21,7 +24,7 @@ async function getHomePage() {
         })
       };
     })
-    .catch(error => error);
+    .catch(error => errorObject(error));
 }
 
 export const prismicQueries = {
