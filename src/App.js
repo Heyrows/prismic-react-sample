@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import { HomePage } from "./modules";
+import { NotFound } from "./components/NotFound";
 
 /*
 ** Main app component
@@ -13,9 +14,16 @@ export const App = () => (
   <Router>
     <Switch>
       <Route
-        path="/"
+        exact path="/"
         render={() =>
           <HomePage />
+        }
+      />
+
+      <Route
+        from="/404"
+        render={() =>
+          <NotFound />
         }
       />
     </Switch>

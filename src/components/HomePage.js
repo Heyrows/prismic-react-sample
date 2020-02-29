@@ -17,7 +17,7 @@ export const HomePage = ({ prismicData }) => (
   </React.Fragment>
 );
 
-// This part must be coherent with what return the function that fetch the HomePage
+// This part must be coherent with what return the function that fetches the HomePage
 HomePage.propTypes = {
   prismicData: PropTypes.shape({
     title: PropTypes.string.isRequired,

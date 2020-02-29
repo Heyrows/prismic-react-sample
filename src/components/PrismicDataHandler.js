@@ -1,9 +1,11 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { Loader } from "./Loader";
 
 /*
 ** This file handles the display of the content.
 ** If you want to specify more error case, you can add them here (ex: add 401 error handler)
+** and then modify the function that generates the error object in utils/prismicQueries.js
 */
 export const PrismicDataHandler = ({ prismicData, Content }) => {
   switch (prismicData.status) {
@@ -12,9 +14,9 @@ export const PrismicDataHandler = ({ prismicData, Content }) => {
     case "ok":
       return <Content prismicData={prismicData} />;
     case "notFound":
-      return <div>Not found</div>;
+      return <Redirect to="/404" />;
     case "error":
-      return <div>Error</div>;
+      return <div>{prismicData.message}</div>;
     default:
       throw Error(`Unknown Prismic Data Status - ${prismicData.status}`);
   }
