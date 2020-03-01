@@ -32,12 +32,13 @@ async function getHomePage() {
         status: "ok",
         title: RichText.asText(data.title),
         description: RichText.asText(data.description),
-        features: data.body.map(slice => {
-          return {
-            name: RichText.asText(slice.primary.feature_name),
-            description: RichText.asText(slice.primary.feature_description)
-          };
-        })
+        reactjsLogo: data.reactjs_logo,
+        prismicLogo: data.prismic_logo,
+        featuresIntro: RichText.asText(data.features_intro),
+        features: data.body.map(slice => ({
+          name: RichText.asText(slice.primary.feature_name),
+          description: RichText.asText(slice.primary.feature_description)
+        }))
       };
     })
     .catch(error => buildErrorObject(error));

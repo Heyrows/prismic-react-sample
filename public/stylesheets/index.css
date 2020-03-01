@@ -1,0 +1,26 @@
+@import "loader.css";
+@import "navbar.css";
+@import "homepage.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a {
+  text-decoration: none;
+}
+
+.root {
+  height: 100%;
+}
+
+.content {
+  margin-left: 230px;
+  padding: 50px;
+}

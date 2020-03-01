@@ -1,0 +1,38 @@
+.homepage__title {
+  font-size: 50px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.homepage__logos {
+  display: block;
+  text-align: center;
+  margin: 20px 0px 40px 0px;
+}
+
+.homepage__logos img {
+  padding: 0px 10px;
+}
+
+.homepage__description {
+  font-size: 20px;
+  text-align: justify;
+  margin: 10px 0px 30px 0px;
+}
+
+.homepage__featuresIntro {
+  font-size: 25px;
+  margin: 0px 0px 30px 0px;
+}
+
+.homepage__feature__name {
+  font-size: 22px;
+  margin: 10px 0px;
+}
+
+.homepage__feature__description {
+  font-size: 18px;
+  width: 80%;
+  text-align: center;
+  margin: 10px auto 30px auto;
+}

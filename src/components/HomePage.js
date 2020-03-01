@@ -1,30 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { HomePagePropTypes } from "../utils/PropTypes";
+import { Image } from "./Image";
 
 export const HomePage = ({ prismicData }) => (
-  <React.Fragment>
-    <div>{prismicData.title}</div>
-    <span>{prismicData.description}</span>
+  <div className="homepage">
+    <div className="homepage__title">{prismicData.title}</div>
+    <span className="homepage__logos">
+      <Image prismicImage={prismicData.prismicLogo} />
+      <Image prismicImage={prismicData.reactjsLogo} />
+    </span>
+    <p className="homepage__description">{prismicData.description}</p>
+    <div className="homepage__featuresIntro">{prismicData.featuresIntro}</div>
     {
-      prismicData.features.map(feature =>
-        <div
-          key={feature.name}
-        >
-          {feature.name} - {feature.description}
-        </div>
-      )
+      prismicData.features.map(feature => (
+        <React.Fragment key={feature.name}>
+          <div className="homepage__feature__name">The {feature.name} feature :</div>
+          <div className="homepage__feature__description">{feature.description}</div>
+        </React.Fragment>
+      ))
     }
-  </React.Fragment>
+  </div>
 );
 
 // This part must be coherent with what return the function that fetches the HomePage
 HomePage.propTypes = {
-  prismicData: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    features: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string
-    }))
-  })
+  prismicData: PropTypes.shape(HomePagePropTypes)
 };

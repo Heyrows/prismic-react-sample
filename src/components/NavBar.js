@@ -3,23 +3,23 @@ import { Link } from "react-router-dom";
 
 export const NavBar = () => (
   <div className="navbar">
-    <div className="routes">
-      <Link to="/" className="link">
+    <div className="navbar__routes">
+      <Link to="/" className="navbar__routes__link">
         Home
       </Link>
 
-      <Link to="/previews" className="link">
+      <Link to="/previews" className="navbar__routes__link">
         Previews
       </Link>
 
-      <Link to="/toolbar" className="link">
+      <Link to="/toolbar" className="navbar__routes__link">
         Toolbar
       </Link>
 
-      <Link to="/products" className="link">
+      <Link to="/products" className="navbar__routes__link">
         Integration Field
       </Link>
     </div>
-    <div className="info">made with love by prismic</div>
+    <div className="navbar__info">made with love by prismic</div>
   </div>
 );
