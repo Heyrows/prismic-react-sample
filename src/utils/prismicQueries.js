@@ -1,5 +1,7 @@
 import { RichText } from "prismic-reactjs";
+import qs from "qs";
 import { prismicClient } from "./prismicClient";
+import { linkResolver } from "../prismic-configuration";
 
 /*
 ** In this file, we get content from Prismic and parse it.
@@ -44,6 +46,48 @@ async function getHomePage() {
     .catch(error => buildErrorObject(error));
 }
 
+/*
+ * This function fetches the ToolbarInfo content and build the data to display
+*/
+async function getToolbarInfoPage() {
+  const pToolbarInfo = prismicClient.getSingle("toolbar_info");
+  const pPreviewExample = prismicClient.getSingle("preview_example");
+
+  return Promise.all([pToolbarInfo, pPreviewExample])
+    .then(([toolbarDoc, previewExampleDoc]) => {
+      const toolbarInfoData = toolbarDoc.data;
+      const previewExampleData = previewExampleDoc.data;
+
+      return {
+        status: "ok",
+        toolbarTitle: RichText.asText(toolbarInfoData.title),
+        toolbarDescription: RichText.asText(toolbarInfoData.description),
+        toolbarScreenshot: toolbarInfoData.toolbar_screenshot,
+        previewTitle: RichText.asText(previewExampleData.title),
+        previewDescription: RichText.asText(previewExampleData.description)
+      };
+    })
+    .catch(error => buildErrorObject(error));
+}
+
+/*
+** This function retrieve the right url for the preview
+*/
+async function previewSession(history, location) {
+  const params = qs.parse(location.search.slice(1));
+  if (!params.token) {
+    return console.error(`Unable to retrieve the session token from provided url. \n
+    Check https://prismic.io/docs/rest-api/beyond-the-api/the-preview-feature for more info`);
+  }
+
+  // Retrieve the correct URL for the document being previewed.
+  // Once fetched, redirect to the given url
+  prismicClient.previewSession(params.token, linkResolver, "/previews")
+    .then(url => history.push(url));
+}
+
 export const prismicQueries = {
-  getHomePage
+  getHomePage,
+  getToolbarInfoPage,
+  previewSession,
 };

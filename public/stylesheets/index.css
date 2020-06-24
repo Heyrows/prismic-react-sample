@@ -1,6 +1,7 @@
 @import "loader.css";
 @import "navbar.css";
 @import "homepage.css";
+@import "toolbarinfopage.css";
 
 html {
   height: 100%;

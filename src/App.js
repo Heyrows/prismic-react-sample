@@ -2,9 +2,10 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
-import { HomePage, Toolbar } from "./modules";
+import { HomePage, ToolbarPage, Preview } from "./modules";
 import { NavBar, NotFound } from "./components";
 
 /*
@@ -23,6 +24,21 @@ export const App = () => (
         />
 
         <Route
+          path="/toolbarInfo"
+          render={() =>
+            <ToolbarPage />
+          }
+        />
+
+        <Route
+          from="/preview"
+          render={({ history, location }) =>
+            // Route to preview content
+            <Preview history={history} location={location} />
+          }
+        />
+
+        <Route
           from="/404"
           render={() =>
             <NotFound />
@@ -30,9 +46,9 @@ export const App = () => (
         />
 
         <Route
-          from="/toolbar"
+          from="*"
           render={() =>
-            <Toolbar />
+            <Redirect to="/404" />
           }
         />
       </Switch>

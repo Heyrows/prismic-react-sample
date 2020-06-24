@@ -1,0 +1,86 @@
+{
+  "Main" : {
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "title",
+        "placeholder" : "required"
+      }
+    },
+    "reactjs_logo" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 60,
+          "height" : 60
+        },
+        "thumbnails" : [ ],
+        "label" : "reactjs logo"
+      }
+    },
+    "prismic_logo" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 60,
+          "height" : 60
+        },
+        "thumbnails" : [ ],
+        "label" : "prismic logo"
+      }
+    },
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label" : "description"
+      }
+    },
+    "features_intro" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph",
+        "label" : "features_intro",
+        "placeholder" : "required"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "feature" : [ ]
+        },
+        "choices" : {
+          "feature" : {
+            "type" : "Slice",
+            "fieldset" : "feature",
+            "description" : "feature included in the sample",
+            "icon" : "add",
+            "display" : "list",
+            "non-repeat" : {
+              "feature_name" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "feature_name",
+                  "placeholder" : "required"
+                }
+              },
+              "feature_description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label" : "feature_description",
+                  "placeholder" : "description of the feature"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}

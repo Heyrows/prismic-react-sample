@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ImagePropTypes } from "../utils/PropTypes";
 
-export const Image = ({ prismicImage }) => prismicImage && (
+export const Image = ({ prismicImage, className }) => prismicImage && (
   <img
+    className={className}
     src={prismicImage.url}
     width={prismicImage.dimensions.width}
     height={prismicImage.dimensions.height}
@@ -12,5 +13,6 @@ export const Image = ({ prismicImage }) => prismicImage && (
 );
 
 Image.propTypes = {
-  prismicImage: PropTypes.shape(ImagePropTypes)
+  prismicImage: PropTypes.shape(ImagePropTypes),
+  className: PropTypes.string,
 };
