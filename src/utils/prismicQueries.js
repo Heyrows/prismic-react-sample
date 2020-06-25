@@ -1,6 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import qs from "qs";
-import { prismicClient } from "./prismicClient";
+import { prismicClient, getRepeatableType } from "./prismicClient";
 import { linkResolver } from "../prismic-configuration";
 
 /*
@@ -47,7 +47,18 @@ async function getHomePage() {
 }
 
 /*
- * This function fetches the ToolbarInfo content and build the data to display
+** This Function fetches all the integration field products that are associated to the custom type if_games
+*/
+
+async function getIntegrationFieldProducts() {
+  return getRepeatableType("if_games").then(documents => ({
+    status: "ok",
+    products: documents.results.map(product => product.data.game)
+  }));
+}
+
+/*
+** This function fetches the ToolbarInfo content and build the data to display
 */
 async function getToolbarInfoPage() {
   const pToolbarInfo = prismicClient.getSingle("toolbar_info");
@@ -90,4 +101,5 @@ export const prismicQueries = {
   getHomePage,
   getToolbarInfoPage,
   previewSession,
+  getIntegrationFieldProducts,
 };

@@ -1,0 +1,31 @@
+.integrationfield-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 300px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.product__image {
+  padding: 10px 20px 10px 20px;
+}
+
+.product__title {
+  border-top: 1px solid;
+  font-size: 25px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+}
+
+.product__description {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+}

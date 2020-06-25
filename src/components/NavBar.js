@@ -12,7 +12,7 @@ export const NavBar = () => (
         Toolbar & Previews
       </Link>
 
-      <Link to="/products" className="navbar__routes__link">
+      <Link to="/IF-products" className="navbar__routes__link">
         Integration Field
       </Link>
     </div>

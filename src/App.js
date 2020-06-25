@@ -5,7 +5,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import { HomePage, ToolbarPage, Preview } from "./modules";
+import { HomePage, ToolbarPage, IntegrationFieldPage, Preview } from "./modules";
 import { NavBar, NotFound } from "./components";
 
 /*
@@ -27,6 +27,13 @@ export const App = () => (
           path="/toolbarInfo"
           render={() =>
             <ToolbarPage />
+          }
+        />
+
+        <Route
+          path="/IF-products"
+          render={() =>
+            <IntegrationFieldPage />
           }
         />
 

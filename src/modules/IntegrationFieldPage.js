@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { prismicQueries } from "../utils";
-import { ToolbarInfo as Content, PrismicDataHandler } from "../components";
+import { IntegrationFieldPage as Content, PrismicDataHandler } from "../components";
 
-export const ToolbarPage = () => {
+export const IntegrationFieldPage = () => {
   const [prismicData, SetPrismicData] = useState({ status: "loading" });
 
   useEffect(() => {
-    prismicQueries.getToolbarInfoPage()
+    prismicQueries.getIntegrationFieldProducts()
       .then(data => SetPrismicData(data));
   }, []);
 

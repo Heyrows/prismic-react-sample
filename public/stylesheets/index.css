@@ -2,6 +2,7 @@
 @import "navbar.css";
 @import "homepage.css";
 @import "toolbarinfopage.css";
+@import "integrationfieldpage.css";
 
 html {
   height: 100%;

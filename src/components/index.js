@@ -4,3 +4,4 @@ export * from "./NotFound";
 export * from "./NavBar";
 export * from "./Loader";
 export * from "./ToolbarInfo";
+export * from "./IntegrationFieldPage";
