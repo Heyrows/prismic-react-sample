@@ -11,5 +11,8 @@ export const accessToken = "";
 // Manages the url links to internal Prismic documents
 export const linkResolver = doc => {
   if (doc.type === "homepage") return "/";
+  if (doc.type === "toolbar_info") return "/toolbarInfo";
+  if (doc.type === "preview_example") return "/toolbarInfo";
+  if (doc.type === "if_games") return "/IF-products";
   return "/previews";
 };
